@@ -1,0 +1,1 @@
+. ~lars/.bashrc_lars

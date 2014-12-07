@@ -1,0 +1,236 @@
+
+;;(setq mac-option-modifier 'none)
+;;(setq mac-command-modifier 'meta)
+
+
+(defun line-one-step-upp ()
+  (interactive)
+  (beginning-of-line)
+  (kill-line 1)
+  (previous-line 1)
+  (yank)
+  (previous-line 1)
+  )
+
+(defun line-one-step-upp ()
+  (interactive)
+  (transpose-lines 1)
+  (previous-line 2)
+  )
+
+(defun line-one-step-down ()
+  (interactive)
+  (next-line 1)
+  (transpose-lines 1)
+  (previous-line 1)
+  )
+
+(global-set-key "\M-Z" 'line-one-step-upp)
+(global-set-key "\M-z" 'line-one-step-down)
+
+; 1
+; 2
+; 3
+;<----
+; 4
+; 5
+; 6
+; 7
+
+(defun scroll-down-in-place (n)
+  (interactive "p")
+  (previous-line n)
+  (scroll-down n))
+
+(defun scroll-up-in-place (n)
+  (interactive "p")
+  (next-line n)
+  (scroll-up n))
+
+(defun line-to-top (n)
+  (interactive "p")
+  (recenter n)
+  )
+
+(defun indent-buffer (n)
+  (interactive "p")
+  (mark-page)
+  (indent-region 0 100000 nil)
+  )
+
+(global-set-key "\C-xnn" 'narrow-to-region)
+(global-set-key "\C-xnw" 'widen)
+(global-set-key "\C-xnp" 'narrow-to-page)
+(global-set-key "\C-xt" 'delete-trailing-whitespace)
+(global-set-key "\M-i" 'indent-buffer)
+
+(global-set-key '[f1] 'line-to-top)
+;(global-set-key '[f2] ')
+(global-set-key '[f3] 'scroll-up-in-place)
+(global-set-key '[f4] 'scroll-down-in-place)
+
+(global-set-key '[f5] 'next-error)
+(global-set-key '[f6] 'set-selective-display)
+(global-set-key '[f7] 'occur)
+(global-set-key '[f8] 'goto-line)
+
+(global-set-key '[f9] 'mycompile)
+(global-set-key '[f2] 'mycompile-mvn)
+(global-set-key '[f10] 'undo)
+
+(global-set-key '[f11] 'window-configuration-to-register)
+(global-set-key '[f12] 'jump-to-register)
+
+;; Better make
+;;
+;;
+
+(defvar compile-command-cygwin "ant -emacs -find build.xml  2>&1 |sed 's/.:.home.lars./\\/home\\/lars\\//'|sed 's/\\\\/\\//g'|sed 's/(\\([0-9]*\\),[0-9]*)/:\\1/'"
+  "Last shell command used to do a compilation; default for next compilation."
+)
+
+(defvar compile-command-linux "ant -emacs -find build.xml"
+  "Last shell command used to do a compilation; default for next compilation."
+)
+
+(defvar compile-command-maven "MVN package | sed2m2Error"
+  "Last shell command used to do a compilation; default for next compilation."
+)
+
+(defun mycompile () (interactive)
+  (setq compilation-window-height 10)
+;  (save-some-buffers t)
+  (compile compile-command-linux)
+  (other-window 1 nil)
+  (goto-char (point-max))
+;  (beginning-of-buffer)
+  (other-window -1 nil)
+)  
+(defun mycompile-mvn () (interactive)
+  (setq compilation-window-height 10)
+;  (save-some-buffers t)
+  (compile compile-command-maven)
+  (other-window 1 nil)
+  (goto-char (point-max))
+;  (beginning-of-buffer)
+  (other-window -1 nil)
+)  
+
+
+
+(defun insert-loop () (interactive)
+  (c-indent-command)
+  (beginning-of-line)
+  (insert "for (int i = 0; i < ; i++) {\n}")
+  (c-indent-command)
+  (previous-line 1)
+  (c-indent-command)
+  (beginning-of-line)
+  (forward-char 20)
+)
+
+(global-set-key "\C-cl" 'insert-loop)
+
+
+;;  "A list specifying text to insert by default into a new file.
+;;Elements look like (REGEXP . FILENAME); if the new file's name
+;;matches REGEXP, then the file FILENAME is inserted into the buffer.
+;;Only the first matching element is effective.")
+
+(load-library "autoinsert")
+
+(setq auto-insert-directory (expand-file-name "~/.emacs_etc/"))
+
+(setq auto-insert-alist
+  (append '(("\\.cc$" . "cc-insert")
+	    ("\\.java$" . "java-insert")
+	    ("\\.hh$" . "hh-insert"))
+	  auto-insert-alist))
+
+
+;;;
+;;
+;; Java-mode
+;;
+(add-hook 'java-mode-hook
+	  (function
+	   (lambda ()
+	     ;;     (font-lock-mode 1)
+	     ;;     (c-set-offset 'access-label 0)
+	     ;;     (c-set-offset 'inline-open 0)
+	     (c-toggle-auto-hungry-state t)
+	     ;;     (c-toggle-auto-state t)
+	     ;;     (c-toggle-hungry-state t)
+	     (setq show-trailing-whitespace t)
+	     )
+	   )
+	  )
+
+;;;
+
+;;
+;; Auto-mode-alist
+;;
+(setq auto-mode-alist
+	(append '(
+		("\\.rdf$" 			.	nxml-mode)
+		("\\.jsp$" 			.	nxml-mode)
+		("\\.jspf$" 			.	nxml-mode)
+		("\\.xml$" 			.	nxml-mode)
+		("\\.txt$" 			. 	text-mode)
+		("\\.doc$" 			. 	text-mode)
+		("\\.c$" 			. 	c++-mode)
+		("\\.cc$" 			. 	c++-mode)
+		("\\.C$" 			.	c++-mode)
+		("\\.hh$" 			. 	c++-mode)
+		("\\.h$" 			. 	c++-mode)
+		("\\.H$" 			.	c++-mode)
+		("\\.l$" 			. 	c++-mode)
+		("\\.jsp$" 			. 	sgml-mode)
+		("\\.jspf$" 			. 	sgml-mode)
+		("\\.java$" 			. 	java-mode)
+		("\\.m4j$" 			. 	java-mode)
+		("\\.pizza$" 			. 	java-mode)
+		("\\.groovy$" 			. 	java-mode)
+		("\\.jsp$" 			. 	java-mode)
+		("\\.cs$" 			. 	java-mode)
+		("\\.jb$" 			. 	java-mode)
+		("\\.vesuvio$" 			. 	java-mode)
+		("\\.ada$" 			. 	ada-mode)
+		("\\.a$" 			. 	ada-mode)
+		("\\.man$" 			. 	nroff-mode)
+		("\\.tcl$" 			. 	tcl-mode)
+		("Makefile" 			. 	makefile-mode)
+		("snd\\.\\([0-9]\\)+$" 		. 	text-mode)
+		("nn\\.\\([a-z]*[0-9]\\)+$" 	. 	text-mode))
+		auto-mode-alist))
+
+;;;
+
+(set-foreground-color "#f0f0e0")
+(set-background-color "#143a45")
+
+
+(setq show-trailing-whitespace t) ;; nothing happend!?
+
+(load-file "/Users/lars/ADDON/nxml-mode/rng-auto.el")
+
+
+;(load-file "/home/lars/ADDON/groovy-mode.el")
+
+;;; turn on syntax hilighting
+;;;(global-font-lock-mode 1)
+
+;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
+;(autoload 'groovy-mode "groovy-mode" "Groovy editing mode." t)
+;(add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))
+;(add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
+
+
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
+(when (eq system-type 'darwin)
+  (setq mac-right-option-modifier 'none))

@@ -1,0 +1,91 @@
+# .bashrc_lars
+
+umask 022
+
+# shopt -s nullglob
+shopt -s cdspell
+
+case "$(uname -a)" in
+    Linux)
+	;;
+    CYGWIN*)
+	export DISPLAY=$(uname -n):0.0
+	;;
+esac
+
+#PATH=~/bin:~/binbin:/usr/local/bin:/usr/java/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH:~/ADDON/groovy/bin
+PATH=~/bin:~/binbin:/usr/local/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH
+
+. ~/ADDON/setEnv
+
+PATH=$PATH:/opt/openoffice.org2.0/program
+
+export PATH
+
+command_oriented_history=yes
+cdable_vars=yes
+ignoreeof=10
+notify=1
+set -o emacs
+
+pwd='echo $cwd'
+PS1='\h:\[\033[7m\]${PWD##*/}\[\033[m\]:\!>'
+
+alias sort='LC_CTYPE=sv_SE sort'
+alias  tell='sccs tell'
+alias  al=alias
+alias  ls='ls -F'
+alias  lll='ls -lL'
+alias  ll='ls -lG'
+alias  lg='ls -lG'
+alias  lS='ls -ls | sort -k5'
+alias  lT='ls -rtl'
+alias  l=less
+alias  m=more
+alias  ..='cd ..'
+alias ...='cd ...; cd $(/bin/pwd)'
+alias  e='emacs'
+alias  df='df -k'
+alias  du='du -k'
+alias ejf='eject -p fd'
+alias \+x='chmod +x'
+alias \mx='chmod -x'
+alias \mw='chmod -w'
+alias \+w='chmod +w'
+alias hgf='fexAll hg fetch'
+alias hgs='fexAll hg st'
+
+alias rm='rm -i'
+
+alias pd=pushd
+alias po=popd
+
+alias hgf='fexAll hg fetch'
+alias hgs='fexAll hg st'
+
+
+. ~/bin/cdnum
+
+export CVSROOT=~/CVS/cvsroot
+
+case "$(uname -a)" in
+    Linux*)
+	. .JAVA
+	;;
+    CYGWIN*)
+	export JAVA_HOME=/c/Program\ Files/Java/jdk1.5.0_06
+	;;
+esac
+
+TERM=xterm-color
+
+export SCALA_HOME=/usr/local/Cellar/scala/2.9.2
+
+export HISTTIMEFORMAT=%H:%M:%S' '
+
+export ANDROID_HOME=/Users/lars/android-sdk-mac_x86
+PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+source ~/.git-completion.bash
