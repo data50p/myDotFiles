@@ -1,0 +1,6 @@
+wd=$(pwd)
+
+for i in $(find . -type d)
+do
+	ln -s $wd $i/...
+done

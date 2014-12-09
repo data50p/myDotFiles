@@ -1,0 +1,3 @@
+#!/bin/sh
+
+awk '{sum += $9} END { print sum }'

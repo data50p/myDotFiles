@@ -1,0 +1,45 @@
+#!/bin/sh
+
+#
+#  fel om fil-10.x och fil-2.x finns
+#
+
+cmd=cat
+
+a0=`basename $0`
+
+ln=ln
+
+while [ $# -gt 0 ]; do
+
+	case $1 in
+	-h )
+		echo $a0 länkar filer till en utan versionsnummer
+		echo $a0 -v skriver bara ut kommandona "(default)"
+		echo $a0 -x exekverar kommandona
+		echo $a0 -cmp utför cmp
+		echo $a0 -cp utför cp -p
+		echo $a0 -s utför ln -s
+		exit 0
+		;;
+	-v )
+		cmd=cat
+		;;
+	-cmp )
+		ln=cmp
+		;;
+	-s )
+		ln='ln -s'
+		;;
+	-cp )
+		ln='cp -p'
+		;;
+	-x )
+		cmd=sh
+		;;
+	esac
+
+	shift
+done
+
+ls | sed -n 's/\(.*\)-\([0-9.]*\)\.\(.*\)/\1 - \2 \3/p'| sed 's/\./ /g' | sort +3n | sed 's/\ /\./g' | sed 's/\.-\./-/' | sed -n 's/\(.*\)-[0-9.]*\(\..*\)/'"$ln"' & \1\2/p' | $cmd

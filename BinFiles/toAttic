@@ -1,0 +1,15 @@
+
+mkdir -p ~/attic
+
+p=$(echo $(pwd) | tr '/' ':')
+
+for i in $@
+do
+	fp=$(echo $i | tr '/' ':')
+	f=$(basename $i)
+	fe=.${f//*./}
+	ff=$(basename $i $fe)
+	ft=${ff}-$(date +%y%m%d).${f//*./}
+	echo cp $i ~/attic/$p:$fp:$ft
+	cp $i ~/attic/$p:$fp:$ft
+done

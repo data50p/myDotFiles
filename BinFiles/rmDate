@@ -1,0 +1,30 @@
+#!/bin/sh
+
+cmd='cp -p'
+if [ x$1 == x-mv ]; then
+	cmd=mv
+	shift
+fi
+
+aD() {
+fil=${1/\//}
+
+if [ x == ${fil}x ] ; then exit
+fi
+
+fild=$(echo $1 | sed 's/\(.*\)-0[0-9][01][0-9][0123][0-9]\(.*\)/\1\2/')
+
+${cmd} $fil $fild
+
+}
+
+for i in $*
+do
+case $1 in
+	*-0[0-9][01][0-9][0123][0-9].*)
+	aD $i
+	;;
+	*)
+	echo $i not changed
+esac
+done

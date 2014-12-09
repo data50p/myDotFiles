@@ -1,0 +1,22 @@
+
+case "$(uname -a)" in
+    Linux)
+	;;
+    CYGWIN*)
+	exec /bin/cygpath.exe $*
+	;;
+esac
+
+function rmflag {
+  case $1 in
+  -*)
+	shift
+	exec cygpath $*
+	;;
+  *)
+	echo $*
+	;;
+  esac
+}
+
+rmflag $*

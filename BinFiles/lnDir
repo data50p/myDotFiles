@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# link whole directory tree to a new copy
+#
+# lnDir target
+
+function fund {
+    for i in $(find . -type d)
+    do
+	echo mkdir -p $target/$i
+	mkdir -p $target/$i
+    done
+}
+
+function funf {
+    for i in $(find . -type f)
+    do
+	echo ln  $i $target/$i
+	ln  $i $target/$i
+    done
+}
+
+
+if [ $# == 1 ]; then
+
+target=$1
+
+fund
+funf
+
+fi
+
+exit 0

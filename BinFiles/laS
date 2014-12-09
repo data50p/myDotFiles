@@ -1,0 +1,2 @@
+find . -type f1 -print0 | xargs -0 du -sk | sort -n
+# ONLY RECENT find . -type f -mtime -1 -print0 | xargs -0 du -sk | sort -n

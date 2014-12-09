@@ -1,0 +1,17 @@
+function reduce {
+	echo $(echo $1|sed 's/\(.*\)\/[^\/]*/\1/')
+}
+
+function hasPom {
+	if [ -z $1 ] ; then
+		echo $2
+	else
+		if [ -f $1/pom.xml ] ; then
+			echo $(hasPom "$(reduce $1)" "$1")
+		else
+			echo $(hasPom "$(reduce $1)" "$2")
+		fi
+	fi
+}
+
+echo $(hasPom $(/bin/pwd) '')
