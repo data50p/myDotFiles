@@ -1,0 +1,15 @@
+#!/bin/bash
+proj=${1/\//}
+
+if [ x == ${proj}x ] ; then exit
+fi
+
+d=$(date +%y%m%d)
+
+if [ x == ${2}x ]; then
+ f=${proj}-${d}.tar.gz
+else
+ f=${proj}-${d}-${2}.tar
+fi
+
+tar cfvS $f $proj
