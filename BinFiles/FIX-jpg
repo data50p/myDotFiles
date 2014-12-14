@@ -1,6 +1,0 @@
-  #exifautotran *
-  substFname .JPG .jpg|sh
-  substFname KB1K kb1k|sh
-  chmod -x *
-  chmod a+r *
-#  jhead -ft *

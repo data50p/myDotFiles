@@ -1,9 +1,0 @@
-pomdir=$(find-pomdir)
-if [ -z $pomdir ] ; then
-	echo 'No pom.xml found'
-	exit 1
-fi
-cd $pomdir
-echo -n 'found pom.xml '
-pwd
-mvn -D"build.date=$(date +%Y%m%d_%H%M%S)" "$*" | sed s'/:\(\[\)\([0-9]*\)\(,[0-9]*]\)/:\2/'
