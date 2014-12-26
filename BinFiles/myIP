@@ -1,1 +1,2 @@
 curl "http://myexternalip.com/raw"
+curl http://icanhazip.com
