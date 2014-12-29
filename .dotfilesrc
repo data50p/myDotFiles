@@ -3,6 +3,10 @@ repository = ~/Dotfiles
 ignore = [
       '.git',
       '.dotfilesrc',
+      '.DS_Store',
+      'BinFiles',
+      'run-unison',
       '.gitignore',
       'dotfiles',
+      '*~',
       '*.swp' ]
