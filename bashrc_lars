@@ -89,3 +89,14 @@ PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 source ~/.git-completion.bash
+
+
+case "$(uname -n)" in
+    magenta)
+	PATH=~/jdk8/bin:$PATH
+        ;;
+    *)
+        ;;
+esac
+
+
