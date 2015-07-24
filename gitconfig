@@ -1,6 +1,6 @@
 [user]
-	name = 
-	email = 
+	name = Lars Nordberg
+	email = lars@femtioprocent.se
 [core]
 	excludesfile = /Users/lars/.gitignore_global
 [difftool "sourcetree"]
