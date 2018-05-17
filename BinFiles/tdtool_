@@ -1,0 +1,3 @@
+#!/bin/bash
+ssh xider.local /usr/local/bin/tdtool "$@"
+#ssh iMac5k.local /usr/local/bin/tdtool "$@"
