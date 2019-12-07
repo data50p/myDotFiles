@@ -16,7 +16,7 @@ esac
 #PATH=~/bin:~/binbin:/usr/local/bin:/usr/java/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH:~/ADDON/groovy/bin
 PATH=~/bin:~/binbin:/usr/local/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH
 
-. ~/ADDON/setEnv
+# . ~/ADDON/setEnv
 
 PATH=$PATH:/opt/openoffice.org2.0/program
 
@@ -54,6 +54,7 @@ alias \mw='chmod -w'
 alias \+w='chmod +w'
 alias hgf='fexAll hg fetch'
 alias hgs='fexAll hg st'
+alias dun="du -k -s *|sort -n"
 
 alias rm='rm -i'
 
@@ -79,14 +80,13 @@ esac
 
 TERM=xterm-color
 
-export SCALA_HOME=/usr/local/Cellar/scala/2.9.2
-
 export HISTTIMEFORMAT=%H:%M:%S' '
 
 export ANDROID_HOME=/Users/lars/android-sdk-mac_x86
 PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v 10)
+
 
 source ~/.git-completion.bash
 
@@ -99,4 +99,4 @@ case "$(uname -n)" in
         ;;
 esac
 
-
+. ~/.bashrc_local_$(uname -n)

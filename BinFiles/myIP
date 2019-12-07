@@ -1,2 +1,3 @@
 curl "http://myexternalip.com/raw"
+echo ''
 curl http://icanhazip.com
