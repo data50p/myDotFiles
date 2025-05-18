@@ -12,8 +12,8 @@
     "blue": "#0000FF",
     "white": "#FFFFFF",
     "black": "#111111",
-    "yellow": "#ffff11",
-    "myyellow": "#ffee88"
+    "yellow": "#FFFF11",
+    "myyellow": "#FFE0B2"
   },
   "blocks": [
     {
@@ -237,7 +237,7 @@
     }
   ],
   "transient_prompt": {
-    "template": "<p:myyellow,transparent>\ue0b6</><,p:myyellow> {{ .Path }} </><p:myyellow,transparent>\ue0b0</> ",
+    "template": "<p:myyellow,transparent>\ue0b6</><,p:myyellow> {{ .Folder }} </><p:myyellow,transparent>\ue0b0</> ",
     "foreground": "p:black",
     "background": "transparent"
   },
