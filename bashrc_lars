@@ -87,8 +87,8 @@ export HISTTIMEFORMAT=%H:%M:%S' '
 export ANDROID_HOME=/Users/lars/android-sdk-mac_x86
 PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-#JAVA_HOME=/Users/lars/Library/Java/JavaVirtualMachines/openjdk-24.0.1/Contents/Home
+#  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#  JAVA_HOME=/Users/lars/Library/Java/JavaVirtualMachines/openjdk-24.0.1/Contents/Home
 JAVA_HOME=/Users/lars/Library/Java/JavaVirtualMachines/openjdk-24.0.1/Contents/Home
 
 PATH=$JAVA_HOME/bin:$PATH
@@ -123,4 +123,6 @@ alias Gh="git show"
 alias Gp="git push"
 #### ??? alias Gh="grep --color=none 'alias G' ~/.bashrc_lars | column"
 
-PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+if [ -e /opt/homebrew ]; then 
+    PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
+fi
