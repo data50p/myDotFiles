@@ -2,6 +2,7 @@ function fix () {
 eval $1 $2 $4 $3
 }
 
+fix ln -s .zshrc  /Users/lars/DotFiles/zshrc
 fix ln -s .bash_profile  /Users/lars/DotFiles/bash_profile
 fix ln -s .bashrc_lars  /Users/lars/DotFiles/bashrc_lars
 fix ln -s .emacs  /Users/lars/DotFiles/emacs
