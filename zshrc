@@ -118,6 +118,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.iterm2_shell_integration.zsh
 
 # eval "$(oh-my-posh init zsh)"
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/jandedobbeleer.omp.json)"
+# eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/jandedobbeleer.omp.json)"
+eval "$(oh-my-posh init zsh --config /Users/lars/.oh-my-theme.json)"
 
 

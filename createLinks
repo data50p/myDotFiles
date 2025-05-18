@@ -13,3 +13,4 @@ fix ln -s .git-completion.bash  /Users/lars/DotFiles/git-completion.bash
 fix ln -s .gitconfig  /Users/lars/DotFiles/gitconfig
 fix ln -s .gitconfig-mpb50p  /Users/lars/DotFiles/gitconfig-mpb50p
 fix ln -s .run-sync  /Users/lars/DotFiles/run-sync
+fix ln -s .oh-my-theme.json /users/lars/DotFiles/oh-my-theme.json
