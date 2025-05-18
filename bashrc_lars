@@ -1,9 +1,11 @@
 # .bashrc_lars
 
+export TERM="xterm-256color"
+
 umask 022
 
 # shopt -s nullglob
-shopt -s cdspell
+# shopt -s cdspell
 
 case "$(uname -a)" in
     Linux)
@@ -14,11 +16,9 @@ case "$(uname -a)" in
 esac
 
 #PATH=~/bin:~/binbin:/usr/local/bin:/usr/java/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH:~/ADDON/groovy/bin
-PATH=~/bin:~/binbin:/usr/local/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH
+PATH=~/bin:~/binbin:/usr/local/bin:/opt/local/bin:/sbin:/usr/sbin:$PATH
 
 # . ~/ADDON/setEnv
-
-PATH=$PATH:/opt/openoffice.org2.0/program
 
 export PATH
 
@@ -29,7 +29,7 @@ notify=1
 set -o emacs
 
 pwd='echo $cwd'
-PS1='\h:\[\033[7m\]${PWD##*/}\[\033[m\]:\!>'
+#PS1='\h:\[\033[7m\]${PWD##*/}\[\033[m\]:\!>'
 
 alias sort='LC_CTYPE=sv_SE sort'
 alias  tell='sccs tell'
@@ -48,15 +48,16 @@ alias  e='emacs'
 alias  df='df -k'
 alias  du='du -k'
 alias ejf='eject -p fd'
-alias \+x='chmod +x'
+#alias \+x='chmod +x'
 alias \mx='chmod -x'
 alias \mw='chmod -w'
-alias \+w='chmod +w'
+#alias \+w='chmod +w'
 alias hgf='fexAll hg fetch'
 alias hgs='fexAll hg st'
-alias dun="du -k -s *|sort -n"
-
+alias dun="du -h -s *|sort -h"
+alias .=source
 alias rm='rm -i'
+alias xLine='xargs -L 1'
 
 alias pd=pushd
 alias po=popd
@@ -64,6 +65,8 @@ alias po=popd
 alias hgf='fexAll hg fetch'
 alias hgs='fexAll hg st'
 
+
+alias|grep gst
 
 . ~/bin/cdnum
 
@@ -78,18 +81,22 @@ case "$(uname -a)" in
 	;;
 esac
 
-TERM=xterm-color
 
 export HISTTIMEFORMAT=%H:%M:%S' '
 
 export ANDROID_HOME=/Users/lars/android-sdk-mac_x86
 PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 10)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#JAVA_HOME=/Users/lars/Library/Java/JavaVirtualMachines/openjdk-24.0.1/Contents/Home
+JAVA_HOME=/Users/lars/Library/Java/JavaVirtualMachines/openjdk-24.0.1/Contents/Home
+
+PATH=$JAVA_HOME/bin:$PATH
 
 
-source ~/.git-completion.bash
-
+if [ -e ~/.git-completion.zsh ]; then 
+    source ~/.git-completion.zsh
+fi 
 
 case "$(uname -n)" in
     magenta)
@@ -99,4 +106,21 @@ case "$(uname -n)" in
         ;;
 esac
 
-. ~/.bashrc_local_$(uname -n)
+if [ -e ~/.bashrc_local_$(uname -n) ]; then 
+	. ~/.bashrc_local_$(uname -n)
+fi
+
+# crash loop
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    # . $(brew --prefix)/etc/bash_completion
+# fi
+
+alias Ga="git add"
+alias Gi="git commit -am"
+alias Gd="git diff"
+alias Gs="git status"
+alias Gh="git show"
+alias Gp="git push"
+#### ??? alias Gh="grep --color=none 'alias G' ~/.bashrc_lars | column"
+
+PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
