@@ -2,13 +2,13 @@ function fix () {
 eval $1 $2 $4 $3
 }
 
-fix ln -s .bash_profile  /Users/lars/Dotfiles/bash_profile
-fix ln -s .bashrc_lars  /Users/lars/Dotfiles/bashrc_lars
-fix ln -s .emacs  /Users/lars/Dotfiles/emacs
-fix ln -s .emacs.d  /Users/lars/Dotfiles/emacs.d
-fix ln -s .emacs_custom_lars  /Users/lars/Dotfiles/emacs_custom_lars
-fix ln -s .emacs_lars  /Users/lars/Dotfiles/emacs_lars
-fix ln -s .git-completion.bash  /Users/lars/Dotfiles/git-completion.bash
-fix ln -s .gitconfig  /Users/lars/Dotfiles/gitconfig
-fix ln -s .gitconfig-mpb50p  /Users/lars/Dotfiles/gitconfig-mpb50p
-fix ln -s .run-sync  /Users/lars/Dotfiles/run-sync
+fix ln -s .bash_profile  /Users/lars/DotFiles/bash_profile
+fix ln -s .bashrc_lars  /Users/lars/DotFiles/bashrc_lars
+fix ln -s .emacs  /Users/lars/DotFiles/emacs
+fix ln -s .emacs.d  /Users/lars/DotFiles/emacs.d
+fix ln -s .emacs_custom_lars  /Users/lars/DotFiles/emacs_custom_lars
+fix ln -s .emacs_lars  /Users/lars/DotFiles/emacs_lars
+fix ln -s .git-completion.bash  /Users/lars/DotFiles/git-completion.bash
+fix ln -s .gitconfig  /Users/lars/DotFiles/gitconfig
+fix ln -s .gitconfig-mpb50p  /Users/lars/DotFiles/gitconfig-mpb50p
+fix ln -s .run-sync  /Users/lars/DotFiles/run-sync
