@@ -1,6 +1,6 @@
 [user]
-	name = Lars Nordberg
-	email = data50p@gmail.com
+	name = lars50p
+	email = reg50p@comhem.se
 [core]
 	excludesfile = /Users/lars/.gitignore_global
 [difftool "sourcetree"]
@@ -18,6 +18,6 @@
 	st = status
   	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 [credential]
-	helper = osxkeychain
+	helper = cache
 [push]
 	default = simple
