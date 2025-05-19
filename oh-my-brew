@@ -1,11 +1,11 @@
 #!/bin/bash
 
-brewlist="oh-my-posh bat fzf fd eza delta zoxide alacritty nvim"
+brewlist="oh-my-posh bat fzf fd eza delta zoxide alacritty nvim zsh-autosuggestions zsh-syntax-highlighting"
 
 for i in $brewlist
 do
   brew install "$i"
 done
 
-mkdir -p ~/.config/alacritty/themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+echo mkdir -p ~/.config/alacritty/themes
+echo git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
