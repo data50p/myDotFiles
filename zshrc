@@ -71,9 +71,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# below plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# below source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -114,8 +114,6 @@ git
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.iterm2_shell_integration.zsh
 
 # eval "$(oh-my-posh init zsh)"
 # eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/jandedobbeleer.omp.json)"
@@ -167,3 +165,6 @@ eval "$(zoxide init zsh)"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+source ~/.iterm2_shell_integration.zsh
