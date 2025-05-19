@@ -9,3 +9,5 @@ done
 
 echo mkdir -p ~/.config/alacritty/themes
 echo git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
+echo "vi Library/Application\ Support/com.mitchellh.ghostty/config"
