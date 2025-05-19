@@ -168,3 +168,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 source ~/.iterm2_shell_integration.zsh
+
+source /opt/homebrew/Cellar/fzf/0.62.0/shell/key-bindings.zsh
+source /opt/homebrew/Cellar/fzf/0.62.0/shell/completion.zsh
+
