@@ -1,0 +1,8 @@
+#!/bin/bash
+
+brewlist="oh-my-posh bat fzf fd eza delta zoxide"
+
+for i in $brewlist
+do
+  brew install "$i"
+done
