@@ -11,9 +11,7 @@ fix ln -s .emacs  ~/DotFiles/emacs
 fix ln -s .emacs.d  ~/DotFiles/emacs.d
 fix ln -s .emacs_custom_lars  ~/DotFiles/emacs_custom_lars
 fix ln -s .emacs_lars  ~/DotFiles/emacs_lars
-fix ln -s .git-completion.bash  ~/DotFiles/git-completion.bash
 fix ln -s .gitconfig  ~/DotFiles/gitconfig
 fix ln -s .gitconfig-mpb50p  ~/DotFiles/gitconfig-mpb50p
-# fix ln -s .run-sync  ~/DotFiles/run-sync
 fix ln -s .oh-my-theme.json ~/DotFiles/oh-my-theme.json
 fix ln -s .alacritty.toml ~/DotFiles/alacritty.toml
