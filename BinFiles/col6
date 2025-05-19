@@ -1,0 +1,3 @@
+#!/bin/bash
+n=$(basename $0|sed 's/col//')
+colN $n

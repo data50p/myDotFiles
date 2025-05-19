@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# print col N only
+
+n=$1
+nn=$2
+n2=$3
+
+awk '{print $'$n', $'$nn', $'$n2'}'

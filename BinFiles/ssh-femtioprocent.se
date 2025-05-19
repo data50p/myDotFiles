@@ -1,1 +1,0 @@
-ssh -L 4848:localhost:4848 fpd-cl01

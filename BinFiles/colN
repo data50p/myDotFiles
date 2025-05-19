@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# print col N only
+
+n=$1
+
+awk '{print $'$n'}'

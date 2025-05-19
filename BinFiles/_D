@@ -1,3 +1,0 @@
-openssl enc -d -bf -in $1 -out xxx
-tar xfv xxx
-rm -f xxx

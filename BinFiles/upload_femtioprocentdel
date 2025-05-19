@@ -1,2 +1,0 @@
-echo  gT3ez5JP
-rsync --delete -uvare ssh --exclude=.svn --exclude=wusage5 /home/lars/project/SVN/femtioprocent/trunk/site/www/ femtiopr@femtioprocent.se:www

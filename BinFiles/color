@@ -1,0 +1,29 @@
+#!/bin/bash
+
+col=$1
+shift
+
+c=32
+
+case $col in
+red)
+	c=31
+	;;
+green)
+	c=32
+	;;
+blue)
+	c=34
+	;;
+magenta)
+	c=35
+	;;
+cyan)
+	c=36
+	;;
+yellow)
+	c=33
+	;;
+esac
+
+echo -n $(echo "$@" | GREP_COLORS="mt=01;$c" grep --color=always -e ".*" -e $)

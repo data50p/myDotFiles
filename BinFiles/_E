@@ -1,3 +1,0 @@
-tar cfv $1.tar $1
-out=q${1}
-openssl enc -bf -in $1.tar -out $out$2
