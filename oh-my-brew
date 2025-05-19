@@ -1,13 +1,10 @@
 #!/bin/bash
 
-brewlist="oh-my-posh bat fzf fd eza delta zoxide alacritty nvim zsh-autosuggestions zsh-syntax-highlighting ghostty kitty"
+brewlist="oh-my-posh bat fzf fd eza delta zoxide nvim zsh-autosuggestions zsh-syntax-highlighting ghostty kitty"
 
 for i in $brewlist
 do
   brew install "$i"
 done
-
-echo mkdir -p ~/.config/alacritty/themes
-echo git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
 echo "vi Library/Application\ Support/com.mitchellh.ghostty/config"
