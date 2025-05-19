@@ -1,5 +1,6 @@
 #!/bin/bash
 proj=${1/\//}
+host=$(hostname | sed 's/.local//')
 
 if [ x == ${proj}x ] ; then exit
 fi
@@ -7,9 +8,9 @@ fi
 d=$(date +%y%m%d-%H%M%S)
 
 if [ x == ${2}x ]; then
- f=${proj}-${d}.tar.gz
+ f=${proj}-$host-${d}.tar
 else
- f=${proj}-${d}-${2}.tar.gz
+ f=${proj}-${d}-${2}.tar
 fi
 
 tar cfvzS $f $proj
