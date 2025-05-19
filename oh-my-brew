@@ -6,3 +6,6 @@ for i in $brewlist
 do
   brew install "$i"
 done
+
+mkdir -p ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes

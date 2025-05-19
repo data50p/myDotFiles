@@ -16,3 +16,8 @@ option_as_alt = "Both"
 normal.family = "MesloLGS Nerd Font Mono"
 
 size = 12
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/dracula.toml"
+]
