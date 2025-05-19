@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brewlist="oh-my-posh bat fzf fd eza delta zoxide"
+brewlist="oh-my-posh bat fzf fd eza delta zoxide alacritty nvim"
 
 for i in $brewlist
 do
