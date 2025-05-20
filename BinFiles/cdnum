@@ -14,7 +14,7 @@ print_cd_list() {
 	file=~/.cdnumlist
 	rm -f $file
 	for i in $(seq 1 $MAX_N); do
-		echo "cdnum_item${i}="'$'"cdnum_item${i}" >> $file
+		eval echo "cdnum_item${i}="'$'"cdnum_item${i}" >> $file
 		alias sd${i}='cdnum_item'${i}'=$PWD;print_cd_list'
 		alias cd${i}='scan_cd_list;cd $cdnum_item'${i}'; echo $PWD'
 	done
