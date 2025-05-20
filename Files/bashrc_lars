@@ -1,6 +1,6 @@
 # .bashrc_lars
 
-echo $KITTY_INSTALLATION_DIR | grep kitty && TERM_PROGRAM="kitty"
+echo "$KITTY_INSTALLATION_DIR" | grep kitty >/dev/null && TERM_PROGRAM="kitty"
 
 case "$TERM_PROGRAM" in
     ghostty)
