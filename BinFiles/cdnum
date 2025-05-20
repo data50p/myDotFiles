@@ -1,91 +1,28 @@
 
-cdnum_item1=$HOME
-cdnum_item2=$HOME
-cdnum_item3=$HOME
-cdnum_item4=$HOME
-cdnum_item5=$HOME
-cdnum_item6=$HOME
-cdnum_item7=$HOME
-cdnum_item8=$HOME
-cdnum_item9=$HOME
-cdnum_item10=$HOME
-cdnum_item11=$HOME
-cdnum_item12=$HOME
-cdnum_item13=$HOME
-cdnum_item14=$HOME
-cdnum_item15=$HOME
-cdnum_item16=$HOME
-cdnum_item17=$HOME
-cdnum_item18=$HOME
-cdnum_item19=$HOME
+MAX_N=19
+
+for i in $(seq 1 $MAX_N); do
+	eval cdnum_item${i}=$HOME
+done
 
 scan_cd_list() {
-	. ~/.cdnumlist
+	source ~/.cdnumlist
 }
+
 
 print_cd_list() {
-file=~/.cdnumlist
-rm -f $file
-echo "cdnum_item1=$cdnum_item1" >> $file
-echo "cdnum_item2=$cdnum_item2" >> $file
-echo "cdnum_item3=$cdnum_item3" >> $file
-echo "cdnum_item4=$cdnum_item4" >> $file
-echo "cdnum_item5=$cdnum_item5" >> $file
-echo "cdnum_item6=$cdnum_item6" >> $file
-echo "cdnum_item7=$cdnum_item7" >> $file
-echo "cdnum_item8=$cdnum_item8" >> $file
-echo "cdnum_item9=$cdnum_item9" >> $file
-echo "cdnum_item10=$cdnum_item10" >> $file
-echo "cdnum_item11=$cdnum_item11" >> $file
-echo "cdnum_item12=$cdnum_item12" >> $file
-echo "cdnum_item13=$cdnum_item13" >> $file
-echo "cdnum_item14=$cdnum_item14" >> $file
-echo "cdnum_item15=$cdnum_item15" >> $file
-echo "cdnum_item16=$cdnum_item16" >> $file
-echo "cdnum_item17=$cdnum_item17" >> $file
-echo "cdnum_item18=$cdnum_item18" >> $file
-echo "cdnum_item19=$cdnum_item19" >> $file
+	file=~/.cdnumlist
+	rm -f $file
+	for i in $(seq 1 $MAX_N); do
+		echo "cdnum_item${i}="'$'"cdnum_item${i}" >> $file
+		alias sd${i}='cdnum_item'${i}'=$PWD;print_cd_list'
+		alias cd${i}='scan_cd_list;cd $cdnum_item'${i}'; echo $PWD'
+	done
 }
 
-alias sd1='cdnum_item1=$PWD;print_cd_list'
-alias cd1='scan_cd_list;cd $cdnum_item1; echo $PWD'
-alias sd2='cdnum_item2=$PWD;print_cd_list'
-alias cd2='scan_cd_list;cd $cdnum_item2; echo $PWD'
-alias sd3='cdnum_item3=$PWD;print_cd_list'
-alias cd3='scan_cd_list;cd $cdnum_item3; echo $PWD'
-alias sd4='cdnum_item4=$PWD;print_cd_list'
-alias cd4='scan_cd_list;cd $cdnum_item4; echo $PWD'
-alias sd5='cdnum_item5=$PWD;print_cd_list'
-alias cd5='scan_cd_list;cd $cdnum_item5; echo $PWD'
-alias sd6='cdnum_item6=$PWD;print_cd_list'
-alias cd6='scan_cd_list;cd $cdnum_item6; echo $PWD'
-alias sd7='cdnum_item7=$PWD;print_cd_list'
-alias cd7='scan_cd_list;cd $cdnum_item7; echo $PWD'
-alias sd8='cdnum_item8=$PWD;print_cd_list'
-alias cd8='scan_cd_list;cd $cdnum_item8; echo $PWD'
-alias sd9='cdnum_item9=$PWD;print_cd_list'
-alias cd9='scan_cd_list;cd $cdnum_item9; echo $PWD'
-alias sd10='cdnum_item10=$PWD;print_cd_list'
-alias cd10='scan_cd_list;cd $cdnum_item10; echo $PWD'
-alias sd11='cdnum_item11=$PWD;print_cd_list'
-alias cd11='scan_cd_list;cd $cdnum_item11; echo $PWD'
-alias sd12='cdnum_item12=$PWD;print_cd_list'
-alias cd12='scan_cd_list;cd $cdnum_item12; echo $PWD'
-alias sd13='cdnum_item13=$PWD;print_cd_list'
-alias cd13='scan_cd_list;cd $cdnum_item13; echo $PWD'
-alias sd14='cdnum_item14=$PWD;print_cd_list'
-alias cd14='scan_cd_list;cd $cdnum_item14; echo $PWD'
-alias sd15='cdnum_item15=$PWD;print_cd_list'
-alias cd15='scan_cd_list;cd $cdnum_item15; echo $PWD'
-alias sd16='cdnum_item16=$PWD;print_cd_list'
-alias cd16='scan_cd_list;cd $cdnum_item16; echo $PWD'
-alias sd17='cdnum_item17=$PWD;print_cd_list'
-alias cd17='scan_cd_list;cd $cdnum_item17; echo $PWD'
-alias sd18='cdnum_item18=$PWD;print_cd_list'
-alias cd18='scan_cd_list;cd $cdnum_item18; echo $PWD'
-alias sd19='cdnum_item19=$PWD;print_cd_list'
-alias cd19='scan_cd_list;cd $cdnum_item19; echo $PWD'
-##al cd?='scan_cd_list;echo $cdnum_item1 $cdnum_item2 $cdnum_item3 $cdnum_item4 $cdnum_item5 $cdnum_item6 $cdnum_item7 $cdnum_item8 $cdnum_item9 $cdnum_item10 $cdnum_item11 $cdnum_item12 $cdnum_item13 $cdnum_item14 $cdnum_item15 $cdnum_item16 $cdnum_item17 $cdnum_item18 $cdnum_item19 | tr " " "\12" | cat -n'
+# alias sd2='cdnum_item2=$PWD;print_cd_list'
+# alias cd2='scan_cd_list;cd $cdnum_item2; echo $PWD'
+
 alias cdx='scan_cd_list;echo $cdnum_item1 $cdnum_item2 $cdnum_item3 $cdnum_item4 $cdnum_item5 $cdnum_item6 $cdnum_item7 $cdnum_item8 $cdnum_item9 $cdnum_item10 $cdnum_item11 $cdnum_item12 $cdnum_item13 $cdnum_item14 $cdnum_item15 $cdnum_item16 $cdnum_item17 $cdnum_item18 $cdnum_item19 | tr " " "\12" | cat -n'
 
 scan_cd_list
