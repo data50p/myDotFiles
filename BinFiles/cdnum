@@ -1,27 +1,28 @@
 
 MAX_N=29
+cdnlfile=~/.cdnumlist
 
 for i in $(seq 1 $MAX_N); do
 	eval cdnum_item${i}=$HOME
 done
 
 scan_cd_list() {
-	source ~/.cdnumlist
+	source $cdnlfile
 }
 
 
 print_cd_list() {
-	file=~/.cdnumlist
-	rm -f $file
+	cdnlfile=~/.cdnumlist
+	rm -f $cdnlfile
 	for i in $(seq 1 $MAX_N); do
-		eval echo "cdnum_item${i}="'$'"cdnum_item${i}" >> $file
-		alias sd${i}='cdnum_item'${i}'=$PWD;print_cd_list'
-		alias cd${i}='scan_cd_list;cd $cdnum_item'${i}'; echo $PWD'
+		eval echo "cdnum_item${i}="'$'"cdnum_item${i}" >> $cdnlfile
 	done
 }
 
-# alias sd2='cdnum_item2=$PWD;print_cd_list'
-# alias cd2='scan_cd_list;cd $cdnum_item2; echo $PWD'
+for i in $(seq 1 $MAX_N); do
+	alias sd${i}='cdnum_item'${i}'=$PWD;print_cd_list'
+	alias cd${i}='scan_cd_list;cd $cdnum_item'${i}'; echo $PWD'
+done
 
 alias cdx='scan_cd_list; for i in $(seq 1 '$MAX_N'); do eval echo \$cdnum_item${i}; done  | cat -n'
 
