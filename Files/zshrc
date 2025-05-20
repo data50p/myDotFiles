@@ -109,6 +109,9 @@ export ZSH="/Users/lars/.oh-my-zsh"
 
 plugins=(
 git
+copyfile
+copypath
+chucknorris
 #zsh-autosuggestions
 #zsh-syntax-highlighting
 )
