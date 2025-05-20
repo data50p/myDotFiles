@@ -26,3 +26,4 @@ print_cd_list() {
 alias cdx='scan_cd_list; for i in $(seq 1 '$MAX_N'); do eval echo \$cdnum_item${i}; done  | cat -n'
 
 scan_cd_list
+print_cd_list
