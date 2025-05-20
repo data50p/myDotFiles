@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brewlist="oh-my-posh unison bat fzf fd eza delta zoxide nvim zsh-autosuggestions zsh-syntax-highlighting ghostty kitty"
+brewlist="oh-my-posh unison bat fzf fd eza delta zoxide nvim zsh-autosuggestions zsh-syntax-highlighting ghostty kitty ripgrep"
 
 for i in $brewlist
 do
