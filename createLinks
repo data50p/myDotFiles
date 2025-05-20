@@ -1,17 +1,18 @@
-function fix () {
-eval $1 $2 $4 $3
-}
-
 cd ~
 
-fix ln -s .zshrc ~/DotFiles/zshrc
-fix ln -s .bash_profile  ~/DotFiles/bash_profile
-fix ln -s .bashrc_lars  ~/DotFiles/bashrc_lars
-fix ln -s .emacs  ~/DotFiles/emacs
-fix ln -s .emacs.d  ~/DotFiles/emacs.d
-fix ln -s .emacs_custom_lars  ~/DotFiles/emacs_custom_lars
-fix ln -s .emacs_lars  ~/DotFiles/emacs_lars
-fix ln -s .gitconfig  ~/DotFiles/gitconfig
-fix ln -s .gitconfig-mpb50p  ~/DotFiles/gitconfig-mpb50p
-fix ln -s .oh-my-theme.json ~/DotFiles/oh-my-theme.json
-fix ln -s .config/ghostty/config ~/DotFiles/config_ghostty_config
+function fixLink () {
+	eval ln -fs ~/DotFiles/Files/$2 $1
+}
+
+
+fixLink .zshrc			zshrc
+fixLink .bash_profile		bash_profile
+fixLink .bashrc_lars		bashrc_lars
+fixLink .emacs			emacs
+fixLink .emacs.d		emacs.d
+fixLink .emacs_custom_lars	emacs_custom_lars
+fixLink .emacs_lars		emacs_lars
+fixLink .gitconfig		gitconfig
+fixLink .gitconfig-mpb50p	gitconfig-mpb50p
+fixLink .oh-my-theme.json	oh-my-theme.json
+fixLink .config/ghostty/config	config_ghostty_config
