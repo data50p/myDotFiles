@@ -1,8 +1,20 @@
 # .bashrc_lars
 
-# export TERM="xterm-kitty"
-# export TERM="xterm-ghostty"
-export TERM="xterm-256color"
+echo $KITTY_INSTALLATION_DIR | grep kitty && TERM_PROGRAM="kitty"
+
+case "$TERM_PROGRAM" in
+    ghostty)
+	export TERM="xterm-ghostty"
+        ;;
+    kitty)
+	export TERM="xterm-kitty"
+        ;;
+    *)
+	export TERM="xterm-256color"
+        ;;
+esac
+
+
 
 umask 022
 
@@ -17,7 +29,6 @@ case "$(uname -a)" in
 	;;
 esac
 
-#PATH=~/bin:~/binbin:/usr/local/bin:/usr/java/bin:.../bin:/opt/local/bin:/sbin:/usr/sbin:$PATH:~/ADDON/groovy/bin
 PATH=~/bin:~/binbin:/usr/local/bin:/opt/local/bin:/sbin:/usr/sbin:$PATH
 
 # . ~/ADDON/setEnv
@@ -74,16 +85,6 @@ alias|grep gst
 
 export CVSROOT=~/CVS/cvsroot
 
-case "$(uname -a)" in
-    Linux*)
-	. .JAVA
-	;;
-    CYGWIN*)
-	export JAVA_HOME=/c/Program\ Files/Java/jdk1.5.0_06
-	;;
-esac
-
-
 export HISTTIMEFORMAT=%H:%M:%S' '
 
 export ANDROID_HOME=/Users/lars/android-sdk-mac_x86
@@ -99,14 +100,6 @@ PATH=$JAVA_HOME/bin:$PATH
 if [ -e ~/.git-completion.zsh ]; then 
     source ~/.git-completion.zsh
 fi 
-
-case "$(uname -n)" in
-    magenta)
-	PATH=~/jdk8/bin:$PATH
-        ;;
-    *)
-        ;;
-esac
 
 if [ -e ~/.bashrc_local_$(uname -n) ]; then 
 	. ~/.bashrc_local_$(uname -n)
