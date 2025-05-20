@@ -14,3 +14,4 @@ fix ln -s .emacs_lars  ~/DotFiles/emacs_lars
 fix ln -s .gitconfig  ~/DotFiles/gitconfig
 fix ln -s .gitconfig-mpb50p  ~/DotFiles/gitconfig-mpb50p
 fix ln -s .oh-my-theme.json ~/DotFiles/oh-my-theme.json
+fix ln -s .config/ghostty/config ~/DotFiles/config_ghostty_config
