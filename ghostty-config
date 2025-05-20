@@ -44,4 +44,12 @@
 #background = a8acb4
 #theme = Violet Light
 #theme = Belafonte Day
-theme = iceberg-light
+#theme = iceberg-light
+#theme = 0x96f
+theme = farmhouse-light
+window-height = 32
+window-width = 132
+window-colorspace = display-p3
+background-blur = true
+background-opacity = 1
+unfocused-split-opacity = 0.7
