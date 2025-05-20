@@ -9,7 +9,6 @@ fixLink .zshrc			zshrc
 fixLink .bash_profile		bash_profile
 fixLink .bashrc_lars		bashrc_lars
 fixLink .emacs			emacs
-fixLink .emacs.d		emacs.d
 fixLink .emacs_custom_lars	emacs_custom_lars
 fixLink .emacs_lars		emacs_lars
 fixLink .gitconfig		gitconfig
