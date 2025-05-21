@@ -1,17 +1,17 @@
 cd ~
 
 function fixLink () {
-	eval ln -fs ~/DotFiles/Files/$2 $1
+  eval ln -fs ~/DotFiles/Files/$2 $1
 }
 
-
-fixLink .zshrc			zshrc
-fixLink .bash_profile		bash_profile
-fixLink .bashrc_lars		bashrc_lars
-fixLink .emacs			emacs
-fixLink .emacs_custom_lars	emacs_custom_lars
-fixLink .emacs_lars		emacs_lars
-fixLink .gitconfig		gitconfig
-fixLink .gitconfig-mpb50p	gitconfig-mpb50p
-fixLink .oh-my-theme.json	oh-my-theme.json
-fixLink .config/ghostty/config	config_ghostty_config
+fixLink   .zshrc                    zshrc
+fixLink   .bash_profile             bash_profile
+fixLink   .bashrc_lars              bashrc_lars
+fixLink   .emacs                    emacs
+fixLink   .emacs_custom_lars        emacs_custom_lars
+fixLink   .emacs_lars               emacs_lars
+fixLink   .gitconfig                gitconfig
+fixLink   .gitconfig-mpb50p         gitconfig-mpb50p
+fixLink   .oh-my-theme.json         oh-my-theme.json
+fixLink   .config/ghostty/config    config_ghostty_config
+fixLink   .config/kitty/kitty.conf  config_kitty_kitty.conf
