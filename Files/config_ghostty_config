@@ -46,10 +46,11 @@
 #theme = Belafonte Day
 #theme = iceberg-light
 #theme = 0x96f
-theme = farmhouse-light
+#theme = farmhouse-light
+theme = catppuccin-mocha
 window-height = 42
 window-width = 132
 window-colorspace = display-p3
 background-blur = true
-background-opacity = 1
+background-opacity = 0.9
 unfocused-split-opacity = 0.7
