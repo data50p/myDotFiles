@@ -1,4 +1,0 @@
-for i in $*
-do
-echo $i | sed 's/\(.*\)\.\(.*\)/cp -p & \1-'$(date +%y%m%d)'.\2/'
-done

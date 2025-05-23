@@ -1,1 +1,0 @@
-java -cp /home/lars/ADDON/db-derby-10.1.2.1/lib/derby.jar:/home/lars/ADDON/db-derby-10.1.2.1/lib/derbytools.jar org.apache.derby.tools.ij

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# print col N only
-
-n=$1
-nn=$2
-
-awk '{print $'$n', $'$nn'}'

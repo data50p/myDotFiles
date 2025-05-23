@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# print col N only using specified delimiter
-# colNfs delimiter col-number
-
-fs=$1
-n=$2
-
-awk -F $fs '{print $'$n'}'

@@ -1,7 +1,0 @@
-cd /home/lars/bin
-ssh-agent > auto_litium
-chmod +x auto_litium
-. auto_litium
-ssh-add
-ssh-add /home/lars/.ssh/id_rsa
-cat rlitium >> auto_litium
