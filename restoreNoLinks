@@ -1,0 +1,20 @@
+cd ~
+
+function rlLink () {
+  echo rm $1
+  echo cp -p ~/DotFiles/Files/$2 $1
+  echo ls -l $1 
+  echo yadm add $1
+}
+
+rlLink   .zshrc                    zshrc
+rlLink   .bash_profile             bash_profile
+rlLink   .bashrc_lars              bashrc_lars
+rlLink   .emacs                    emacs
+rlLink   .emacs_custom_lars        emacs_custom_lars
+rlLink   .emacs_lars               emacs_lars
+rlLink   .gitconfig                gitconfig
+rlLink   .gitconfig-mpb50p         gitconfig-mpb50p
+rlLink   .oh-my-theme.json         oh-my-theme.json
+rlLink   .config/ghostty/config    config_ghostty_config
+rlLink   .config/kitty/kitty.conf  config_kitty_kitty.conf
